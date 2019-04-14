@@ -1,0 +1,144 @@
+/**
+ * Layout with vgrid.
+ */
+
+
+/**
+ * General layout
+ */
+
+.row {
+    #desinax-vgrid.row();
+    margin-bottom: 0px;
+}
+
+
+.inner-wrap {
+    #desinax-vgrid.grid(1100px);
+    padding-bottom: 24px;
+    //background-color: @bgColorMain;
+}
+
+.inner-wrap-main {
+    background-color: @bgColorMain;
+}
+
+.vgrid .inner-wrap {
+    @gridImage: "../img/grid_24x30x10-nomargin.png";
+    #desinax-vgrid.showGrid(@gridImage, 1100px);
+
+    &.inner-wrap-header {
+        #desinax-vgrid.showGrid(@gridImage);
+    }
+}
+
+
+ /**
+  * Main layout
+  */
+
+
+
+.figure {
+    margin-left: 0em;
+}
+
+.figure.right {
+    float: right;
+    margin-right: 0em;
+}
+
+.region-main {
+    #desinax-vgrid.column(@columns * 3 / 4);
+    #desinax-vgrid.push(3);
+
+    &.has-sidebar {
+        #desinax-vgrid.push(0);
+
+
+        &.has-sidebar-right {
+            #desinax-vgrid.column(@columns * 3 / 4 - 2);
+            #desinax-vgrid.push(1);
+        }
+
+        &.has-sidebar-left {
+            #desinax-vgrid.column(@columns * 3 / 4 - 2);
+        }
+    }
+
+    &.has-sidebar-left.has-sidebar-right {
+        #desinax-vgrid.column(@columns * 3 / 4 - 5);
+    }
+}
+
+.region-sidebar-left,
+.region-sidebar-right {
+    #desinax-vgrid.column(@columns * 1 / 4 - 1);
+    #desinax-vgrid.push(1);
+}
+
+.region-sidebar-left.has-sidebar-right,
+.region-sidebar-right.has-sidebar-left {
+    #desinax-vgrid.column(@columns * 1 / 4 - 2);
+    #desinax-vgrid.push(0);
+}
+
+.previous {
+    float: left;
+}
+
+.next {
+    float: right;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0em;
+}
+
+.level-0,
+.level-1,
+.level-2 {
+    padding-bottom: 24px;
+}
+
+
+main a {
+    text-decoration: none;
+    color: @ColorH;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+p {
+    margin-block-start: 0em;
+}
+
+.test {
+    clear: both;
+}
+
+.figure.left {
+    float: left;
+}
+
+.block {
+    clear: both;
+}
+
+// Enable style from the module and optinally add customized layout
+figure.figure {
+    #desinax-figure.figure();
+}
+
+figure.asciinema {
+    &:extend(figure.figure);
+    #desinax-figure.asciinema();
+}
+
+figure.codepen,
+figure.figure-codepen {
+    &:extend(figure.figure);
+    #desinax-figure.codepen();
+}

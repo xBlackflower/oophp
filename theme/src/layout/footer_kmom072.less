@@ -1,0 +1,34 @@
+/**
+ * Footer layout
+ */
+.region-footer {
+    clear: both;
+}
+
+.footer-column {
+    #desinax-vgrid.column(@columns / 3);
+}
+
+.site-footer {
+    #desinax-vgrid.column(@columns);
+    #desinax-vgrid.push(8);
+    clear: both;
+}
+
+.region-footer a {
+    text-decoration: underline;
+    color: @ColorFooter;
+    &:hover {
+        color: rgb(250, 250, 250);
+    }
+}
+
+.region-footer h4 {
+    color: rgb(250, 250, 250);
+}
+
+.outer-wrap-footer,
+.inner-wrap-footer {
+    background-color: @bgColorFooter;
+    color: @ColorFooter;
+}

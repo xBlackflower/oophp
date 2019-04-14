@@ -1,0 +1,63 @@
+/**
+ * Header layout
+ */
+.site-logo {
+    display: none;
+}
+
+.rm-desktop li a {
+    //color: #1c1c1c;
+    color: rgb(250, 250, 250);
+    background-color: @bgColorFooter;
+    border-bottom: 3px solid #fff;
+    &:hover {
+        text-decoration: none;
+        color: @ColorH;
+        border-bottom: 3px solid @ColorH;
+
+    }
+    //background-color: #EEDEB5;
+}
+
+
+.region-header {
+    //background-color: #EEDEB5;
+}
+
+.inner-wrap-header {
+    #desinax-vgrid.grid(100%);
+    background-color: #fff;
+}
+
+
+.region-header-col-1,
+.region-header-col-3 {
+    #desinax-vgrid.column(5);
+}
+
+.region-header-col-2 {
+    #desinax-vgrid.column(14);
+    text-align: center;
+}
+
+.outer-wrap-flash {
+    background-color: @bgColorFooter;
+}
+
+.region-flash {
+    #desinax-vgrid.column(@columns + 0.5);
+}
+
+.inner-wrap-flash {
+    padding-bottom: 0px;
+}
+
+.region-breadcrumb {
+    #desinax-vgrid.column(@columns);
+    #desinax-vgrid.push(1);
+    //padding-top: 8px;
+}
+
+.inner-wrap-breadcrumb {
+    background-color: @bgColorMain;
+}
